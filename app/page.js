@@ -4,7 +4,7 @@ export default function Home() {
   return (
     
     <div>
-      shamiul islam 
+      shamiul islam    
     </div>
   );
 }
