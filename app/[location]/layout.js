@@ -1,8 +1,9 @@
-
+import "../globals.css";
 
 export default function layout({children, aqi, weather, temperature,wind}) {
   return (
-    <div>
+    <div >
+      
       {children}
       {weather}
       {aqi}
