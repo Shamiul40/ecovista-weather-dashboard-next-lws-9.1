@@ -1,44 +1,47 @@
-"use client"
+// "use client"
 
-import Image from "next/image";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+// import Image from "next/image";
+// import { usePathname, useRouter, useSearchParams } from "next/navigation";
+// import React, { useEffect, useState } from "react";
 
-export default function LocationDetector() {
-  const [loading, setLoading] = useState(false);
-  const searchParams = useSearchParams();
-  const pathName = usePathname();
-  const router = useRouter();
+// export default function LocationDetector() {
+//   const [loading, setLoading] = useState(false);
+//   const searchParams = useSearchParams();
+//   const pathName = usePathname();
+//   const router = useRouter();
 
-  useEffect(() => {
-    setLoading(true);
+//   useEffect(() => {
+//     setLoading(true);
 
-    const params = new URLSearchParams(searchParams)
+//     const params = new URLSearchParams(searchParams)
 
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position)=>{
-            params.set('latitude', position.coords.latitude)
-            params.set("longitude", position.coords.longitude)
+//     if(navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition((position)=>{
+//             params.set('latitude', position.coords.latitude)
+//             params.set("longitude", position.coords.longitude)
 
-            setLoading(false)
+//             setLoading(false)
 
-            router.push(`/current?${params.toString()}`)
+//             router.push(`/current?${params.toString()}`)
             
 
-        })
-    }
+//         })
+//     }
 
-  }, [pathName, searchParams]);
+//   }, [pathName, searchParams]);
 
-  return (
-  <div className="flex flex-col justify-center items-center h-screen bg-slate-700 text-white">
+//   return (
+//   <div className="flex flex-col justify-center items-center h-screen bg-slate-700 text-white">
 
-    {
-        loading && (
-            <>
-            <Image alt="image" src='/network.gif' height={500} width={500} className="border rouded-md my-4" />
-            </>
-        )
-    }
-  </div>);
-}
+//     {
+//         loading && (
+//             <>
+//             <Image alt="image" src='/network.gif' height={500} width={500} className="border rouded-md my-4" />
+//             </>
+//         )
+//     }
+//   </div>);
+// }
+
+
+"use client"
