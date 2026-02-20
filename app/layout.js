@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body
         className="w-10/12 mx-auto"
       >
-        {children}
+        {children} 
       </body>
     </html>
   );
