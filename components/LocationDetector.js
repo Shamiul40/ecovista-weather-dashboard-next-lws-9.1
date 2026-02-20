@@ -1,17 +1,25 @@
 "use client"
 
+import { wait } from "@/lib/wait";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-export default function LocationDetector() {
+export default  function LocationDetector() {
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
-  const pathName = usePathname();
   const router = useRouter();
 
   useEffect(() => {
-    setLoading(true);
+    
+    const run =async()=>{
+
+        setLoading(true);
+
+        console.log("before wait")
+        await wait(3000)
+        console.log("after wait")
+
 
     const params = new URLSearchParams(searchParams)
 
@@ -28,15 +36,21 @@ export default function LocationDetector() {
         })
     }
 
-  }, [pathName, searchParams]);
+    }
+
+    run()
+
+  }, [router, searchParams]);
 
   return (
-  <div className="flex flex-col justify-center items-center h-screen bg-slate-700 text-white">
+  <div className="flex flex-col justify-center items-center w-full h-screen bg-slate-700 text-white">
 
     {
         loading && (
             <>
             <Image alt="image" src='/network.gif' height={500} width={500} className="border rouded-md my-4" />
+
+            <p className="text-3xl ">Detecting Location...</p>
             </>
         )
     }
