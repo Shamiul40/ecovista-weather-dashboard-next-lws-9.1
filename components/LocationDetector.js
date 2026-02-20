@@ -17,7 +17,7 @@ export default function LocationDetector() {
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position)=>{
-            params.set('latitude', position.cords.latitude)
+            params.set('latitude', position.coords.latitude)
             params.set("longitude", position.coords.longitude)
 
             setLoading(false)
@@ -36,7 +36,7 @@ export default function LocationDetector() {
     {
         loading && (
             <>
-            <Image alt="image" src='/public/network.gif' height={500} width={500} className="border rouded-md my-4" />
+            <Image alt="image" src='/network.gif' height={500} width={500} className="border rouded-md my-4" />
             </>
         )
     }
