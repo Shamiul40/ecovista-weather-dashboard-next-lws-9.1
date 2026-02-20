@@ -46,11 +46,23 @@
 
 "use client"
 
+import { usePathname, useSearchParams } from 'next/navigation';
 import React, { useState } from 'react'
 
 export default function LocationDetector() {
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const searchParams = useSearchParams();
+    const pathName = usePathname()
+
+    if(navigator.geolocation) {
+        setLoading(true)
+        const params = new URLSearchParams(searchParams)
+
+        
+
+    }
+
     
   return (
     <div>
