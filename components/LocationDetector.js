@@ -46,9 +46,12 @@
 
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function LocationDetector() {
+
+    const [loading, setLoading] = useState(false)
+    
   return (
     <div>
       
