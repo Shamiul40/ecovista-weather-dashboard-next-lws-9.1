@@ -1,62 +1,47 @@
-"use client"
+"use client";
 
-import { wait } from "@/lib/wait";
+
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-export default  function LocationDetector() {
+export default function LocationDetector() {
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
 
   useEffect(() => {
-    
-    const run =async()=>{
+    setLoading(true);
 
-        setLoading(true);
+    const params = new URLSearchParams(searchParams);
 
-        console.log("before wait")
-        await wait(3000)
-        console.log("after wait")
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        params.set("latitude", position.coords.latitude);
+        params.set("longitude", position.coords.longitude);
 
+        setLoading(false);
 
-    const params = new URLSearchParams(searchParams)
-
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position)=>{
-            params.set('latitude', position.coords.latitude)
-            params.set("longitude", position.coords.longitude)
-
-            setLoading(false)
-
-            router.push(`/current?${params.toString()}`)
-            
-
-        })
+        router.push(`/current?${params.toString()}`);
+      });
     }
-
-    }
-
-    run()
-
   }, [router, searchParams]);
 
   return (
-  <div className="flex flex-col justify-center items-center w-full h-screen bg-slate-700 text-white">
+    <div className="flex flex-col justify-center items-center w-full h-screen bg-slate-700 text-white">
+      {loading && (
+        <>
+          <Image
+            alt="image"
+            src="/network.gif"
+            height={500}
+            width={500}
+            className="border rouded-md my-4"
+          />
 
-    {
-        loading && (
-            <>
-            <Image alt="image" src='/network.gif' height={500} width={500} className="border rouded-md my-4" />
-
-            <p className="text-3xl ">Detecting Location...</p>
-            </>
-        )
-    }
-  </div>);
+          <p className="text-3xl ">Detecting Location...</p>
+        </>
+      )}
+    </div>
+  );
 }
-
-
-
-
