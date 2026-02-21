@@ -10,6 +10,10 @@ export default async function AirPollutionPage({ lat, lon }) {
   const { main, components } = airPollutionData.list[0];
   console.log(main, components);
 
+  const  getAqiStatus =()
+  
+    
+
   return (
     <Card>
       <h6 className="feature-name">Air Pollution & Quality</h6>
