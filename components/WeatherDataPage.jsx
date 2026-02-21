@@ -24,8 +24,8 @@ export default async function WeatherDataPage({lat, lon}) {
               width={100}
               height={100}
             />
-            <h3 className="feature-title">Rain</h3>
-            <span className="feature-name">Moderate Rain</span>
+            <h3 className="feature-title">{main}</h3>
+            <span className="feature-name">{description}</span>
           </div>
         </div>
       </div>
