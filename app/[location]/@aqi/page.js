@@ -1,10 +1,10 @@
 import AirPollutionPage from '@/components/AirPollutionPage'
 import React from 'react'
 
-export default function AqiPage() {
+export default function AqiPage({params : {location}, searchParams :{latitude, Longitude}}) {
   return (
     <div>
-      <AirPollutionPage></AirPollutionPage>
+      <AirPollutionPage lat={latitude} lon={Longitude} ></AirPollutionPage>
     </div>
   )
 }
