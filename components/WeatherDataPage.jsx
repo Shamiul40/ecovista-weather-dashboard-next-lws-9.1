@@ -5,27 +5,27 @@ import { getWeatherData } from "@/lib/getWeatherData";
 
 export default async function WeatherDataPage({lat, lon}) {
 
-    const weatherData = await getWeatherData(lat, lon)
+    const {main, description}  = await getWeatherData(lat, lon)
 
-    const data = weatherData?.current?.weather[0];
+    
 
-    console.log(data)
+    console.log("weather data here",main, description)
 
   return (
     <Card>
-      <div class="col-span-12 lg:col-span-4 2xl:col-span-3">
-        <div class="card">
-          <h6 class="feature-name">Current Weather</h6>
-          <div class="feature-main">
+      <div className="col-span-12 lg:col-span-4 2xl:col-span-3">
+        <div className="card">
+          <h6 className="feature-name">Current Weather</h6>
+          <div className="feature-main">
             <Image
-              class="max-w-20"
+              className="max-w-20"
               src="/icons/icon_rain.png"
               alt="rain icon"
               width={100}
               height={100}
             />
-            <h3 class="feature-title">Rain</h3>
-            <span class="feature-name">Moderate Rain</span>
+            <h3 className="feature-title">Rain</h3>
+            <span className="feature-name">Moderate Rain</span>
           </div>
         </div>
       </div>
