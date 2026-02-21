@@ -1,5 +1,5 @@
 import { getAirPollutionWeatherData } from '@/lib/getWeatherData'
-import React from 'react'
+import React, { Children } from 'react'
 
 export default async function AirPollutionPage({lat, lon}) {
 
@@ -9,8 +9,11 @@ export default async function AirPollutionPage({lat, lon}) {
 
 
   return (
-    <div>
-      air pollution components
+    <div >
+        <div>
+           
+        </div>
+      
     </div>
   )
 }
