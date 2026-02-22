@@ -10,7 +10,9 @@ export default async function AirPollutionPage({ lat, lon }) {
   const { main, components } = airPollutionData.list[0];
   console.log(main, components);
 
-  const  getAqiStatus =()
+  const  getAqiStatus =()=>{
+    
+  }
   
     
 
