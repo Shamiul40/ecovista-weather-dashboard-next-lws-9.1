@@ -16,6 +16,20 @@ export default async function AirPollutionPage({ lat, lon }) {
       case  1 :
       return "good"
       break
+      case 2 :
+        return "fair"
+      break
+      case 3 :
+        return "moderate";
+        break
+      case 4 :
+        return "poor"
+        break
+      case 5 :
+        return "very poor"
+      break
+      default:
+        return "unknown"
     }
 
   }
@@ -40,7 +54,7 @@ export default async function AirPollutionPage({ lat, lon }) {
             Air Quality Index
           </div>
           <span className="text-right text-sm text-white lg:text-base">
-            Good
+            {}
           </span>
         </div>
         {/* <!-- item ends --> */}
