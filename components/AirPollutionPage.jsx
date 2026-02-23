@@ -54,7 +54,7 @@ export default async function AirPollutionPage({ lat, lon }) {
             Air Quality Index
           </div>
           <span className="text-right text-sm text-white lg:text-base">
-            {}
+            {getAqiStatus(main.aqi)}
           </span>
         </div>
         {/* <!-- item ends --> */}
