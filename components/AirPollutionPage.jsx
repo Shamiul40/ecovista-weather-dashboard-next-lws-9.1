@@ -74,8 +74,8 @@ export default async function AirPollutionPage({ lat, lon }) {
             {components.co}µg/m³
           </span>
         </div>
-        {/* <!-- item ends --> */}
-        {/* <!-- item --> */}
+       
+        
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-[#CADEE8] lg:text-base">
             <Image
