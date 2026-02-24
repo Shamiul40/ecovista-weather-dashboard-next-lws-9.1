@@ -142,7 +142,7 @@ export default async function AirPollutionPage({ lat, lon }) {
             {components.so2} ppm
           </span>
         </div>
-        {/* <!-- item ends --> */}
+        
         {/* <!-- item --> */}
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-[#CADEE8] lg:text-base">
