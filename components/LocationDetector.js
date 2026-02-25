@@ -28,7 +28,7 @@ export default function LocationDetector() {
   }, [router, searchParams]);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-screen bg-slate-700 text-white">
+    <div className="flex flex-col  justify-center items-center w-full h-screen bg-slate-700 text-white">
       {loading && (
         <>
           <Image
@@ -36,7 +36,7 @@ export default function LocationDetector() {
             src="/network.gif"
             height={500}
             width={500}
-            className="border rouded-md my-4"
+            className="border rounded-md my-4"
           />
 
           <p className="text-3xl ">Detecting Location...   </p>
