@@ -39,7 +39,7 @@ export default function LocationDetector() {
             className="border rounded-md my-4"
           />
 
-          <p className="text-3xl ">Detecting Location .. ....   . ..  ..........      </p>
+          <p className="text-3xl ">Detecting Location   .. ....   . ..  ..........      </p>
         </>
       )}
     </div>
