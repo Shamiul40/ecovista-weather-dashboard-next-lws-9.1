@@ -20,8 +20,8 @@ export default async function WeatherDataPage({lat, lon}) {
             <Image
               className="max-w-20 " 
               src="/icons/icon_rain.png"
-              alt="rain icon"
-              width={100}
+              alt="rain icon here"
+              width={100} 
               height={100}
             />
             <h3 className="feature-title">{main}</h3>
