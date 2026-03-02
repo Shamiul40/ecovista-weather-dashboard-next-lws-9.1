@@ -16,7 +16,7 @@ export default async function WeatherDataPage({lat, lon}) {
       <div className="col-span-12 lg:col-span-4 2xl:col-span-3">
         <div className="card">
           <h6 className="feature-name">Current Weather  </h6>
-          <div className="feature-main">
+          <div className="feature-main ">
             <Image
               className="max-w-20 " 
               src="/icons/icon_rain.png"
